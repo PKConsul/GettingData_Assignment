@@ -1,17 +1,16 @@
 ###########################################
 print("loading data:")
 
-subject_test_set<-read.table("test/subject_test.txt")
-activity_labels<-read.table("activity_labels.txt")
+subject_test_set<-read.table("getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/subject_test.txt")
+activity_labels<-read.table("getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/activity_labels.txt")
 
-###########################################
-features<-read.table("features.txt")
+features<-read.table("getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/features.txt")
 
-X_training_set<-read.table("train/X_train.txt")
-Y_training_set<-read.table("train/Y_train.txt")
-Y_test_set<-read.table("test/Y_test.txt")
-subject_training_set<-read.table("train/subject_train.txt")
-X_test_set<-read.table("test/X_test.txt")
+X_training_set<-read.table("getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/X_train.txt")
+Y_training_set<-read.table("getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/Y_train.txt")
+Y_test_set<-read.table("getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/Y_test.txt")
+subject_training_set<-read.table("getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt")
+X_test_set<-read.table("getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/X_test.txt")
 
 colnames(activity_labels)[1] <- "id"
 colnames(activity_labels)[2] <- "activity_name"

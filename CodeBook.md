@@ -34,10 +34,12 @@ X_set<-rbind(X_test_set,X_training_set)
  ```
  - std_mean_rows -> vector containing indexes for std and mean in the column names based on the features columns names
 ```
-std_mean_rows<-grep(pattern=".mean|.std",features$"V2")```
+std_mean_rows<-grep(pattern=".mean|.std",features$"V2")
+```
  - limited_X_set -> X_set limited with columns based on the std_mean_rows results (562,563 are columns containing 'subject' and 'activity')
  ```
-limited_X_set <- X_set[,c(std_mean_rows,562,563)]```
+limited_X_set <- X_set[,c(std_mean_rows,562,563)]
+```
 
  - act_limited_X_set -> limited_X_set with actiivity translation from the digit to the label value {finally 1st column has to be dropped to remove not needed column which contains activity id value}
  ```
@@ -53,17 +55,13 @@ Other transformation:
 
 ```
 for (j in 1:79) {names(act_limited_X_set)[j]<-paste(features[substr(names(act_limited_X_set)[j],2,nchar(names(act_limited_X_set)[j])),2])}
-write.csv(act_limited_X_set,file="first_tidy_set.txt")```
+write.csv(act_limited_X_set,file="first_tidy_set.txt")
+```
 
 - second_set -> second tidy set created based on act_limited_X_set
 ```
 second_set<-ddply(act_limited_X_set,.(subject,activity_name), numcolwise(mean))
 ```
----
 
-Version
-----
-
-1.0
 
 
